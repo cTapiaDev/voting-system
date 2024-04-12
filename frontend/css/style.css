@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'poppins';
+    src: url('./../assets/font/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'poppins-bold';
+    src: url('./../assets/font/Poppins-Bold.ttf');
+}
+
+/* Variables */
+:root {
+    --font-size: 16px;
+    --font-general: 'poppins';
+    --font-bold: 'poppins-bold';
+}
+
+
+/* General Styles */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-size: var(--font-size);
+    font-family: var(--font-general);
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    max-width: 1400px;
+    height: 100vh;
+    padding: 25px;
+    display: grid;
+    place-content: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-family: var(--font-bold);
+}
+
+form {
+    max-width: 100%;
+    min-width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+label span {
+    display: block;
+    max-width: 250px;
+    width: 250px;
+}
+
+input[type="text"], input[type="email"], select {
+    width: 50%;
+    max-width: 200px;
+    padding: 2px 5px;
+}
+
+button {
+    padding: 5px 18px;
+    cursor: pointer;
+    font-size: var(--font-size);
+}
+
+/* Class Styles */
+.not-label {
+    width: 250px;
+    max-width: 250px;
+}
+
+.form-checks {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transform: translateY(-4px);
+}
+
+.form-checks label {
+    width: auto;
+    transform: translate(-4px, 4px);
+}
+
+.form-action {
+    width: 100%;
+    margin-top: 25px;
+}
