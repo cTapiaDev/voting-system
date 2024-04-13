@@ -14,39 +14,40 @@
                 <input type="text" name="vNombre" id="vNombre">
             </label>
 
-            <!-- <label for="vAlias">
+            <label for="vAlias">
                 <span>Alias</span>
                 <input type="text" name="vAlias" id="vAlias">
             </label>
-            
 
             <label for="vRut">
                 <span>RUT</span>
                 <input type="text" name="vRut" id="vRut">
             </label>
-            
 
             <label for="vMail">
                 <span>Email</span>
                 <input type="email" name="vMail" id="vMail">
             </label>
-            
 
             <label for="vRegion">
                 <span>Región</span>
-                <select id="vRegion" name="vRegion"></select>
+                <select id="vRegion" name="vRegion" onchange="printSelects()">
+                    <option value="---" selected="selected">---</option>
+                </select>
             </label>
-            
 
             <label for="vComuna">
                 <span>Comuna</span>
-                <select id="vComuna" name="vComuna"></select>
+                <select id="vComuna" name="vComuna">
+                    <option value="---" selected="selected">---</option>
+                </select>
             </label>
-            
 
             <label for="vCandidato">
                 <span>Candidato</span>
-                <select id="vCandidato" name="vCandidato"></select>
+                <select id="vCandidato" name="vCandidato">
+                    <option value="---" selected="selected">---</option>
+                </select>
             </label>
             
 
@@ -63,7 +64,7 @@
 
                 <input type="checkbox" id="vAmigo" name="vAmigo" value="Amigo">
                 <label for="vAmigo">Amigo</label>
-            </div>  -->
+            </div> 
 
             <div class="form-action">
                 <button type="submit">Votar</button>
@@ -73,5 +74,6 @@
 
     <!-- Scripts -->
     <script src="./app.js"></script>
+    <script src="./js/data.js"></script>
 </body>
 </html>
