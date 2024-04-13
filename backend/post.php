@@ -12,9 +12,3 @@ if ($_POST) {
 
     echo json_encode($nombre." agregado");
 }
-
-// if ($nombre === '') {
-//     echo json_encode('Llena los campos');
-// } else {
-//     echo json_encode('Correcto');
-// }
