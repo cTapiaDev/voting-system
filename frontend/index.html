@@ -13,22 +13,22 @@
         <form id="formulario">
             <label for="vNombre">
                 <span>Nombre y Apellido</span>
-                <input type="text" name="vNombre" id="vNombre">
+                <input type="text" name="vNombre" id="vNombre" placeholder="Nombre y Apellido" onkeypress="return onlyString(event)">
             </label>
 
             <label for="vAlias">
                 <span>Alias</span>
-                <input type="text" name="vAlias" id="vAlias">
+                <input type="text" name="vAlias" id="vAlias" placeholder="Alias" onkeypress="return onlyString(event)">
             </label>
 
             <label for="vRut">
                 <span>RUT</span>
-                <input type="text" name="vRut" id="vRut">
+                <input type="text" name="vRut" id="vRut" pattern="[0-9]+" placeholder="Sin puntos ni guion" maxlength="9" onkeypress="return onlyNumbers(event)">
             </label>
 
             <label for="vMail">
                 <span>Email</span>
-                <input type="email" name="vMail" id="vMail">
+                <input type="email" name="vMail" id="vMail" placeholder="ejemplo@gmail.com">
             </label>
 
             <label for="vRegion">
