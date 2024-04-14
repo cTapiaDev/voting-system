@@ -5,6 +5,7 @@ const sComuna = document.getElementById('vComuna');
 const sCandidato = document.getElementById('vCandidato');
 const alertRes = document.getElementById('alertResponse');
 
+
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -99,6 +100,16 @@ const reload = (() => {
         location.reload();
     }, 4000);
 });
+
+function onlyNumbers(e) {
+    const key = window.Event ? e.which : e.keyCode;
+    return (key >= 48 && key <= 57) || key === 75;
+}
+
+function onlyString(e) {
+    const key = window.Event ? e.which : e.keyCode;
+    return (key >= 97 && key <= 122) || (key >= 65 && key <= 90) || key === 209 || key === 241;
+}
 
 
 
