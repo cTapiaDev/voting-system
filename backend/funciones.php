@@ -36,10 +36,14 @@ function validarRut($rut) {
     if ($dvr == 10) {
         $dvr = 'K';
     }
-    
+
     if ($dvr == strtoupper($dv)) {
         return true;
     } else {
         return false;
     }
+}
+
+function limpiarNosotros($match) {
+    return str_replace("," , "" , $match["nrs"]);
 }

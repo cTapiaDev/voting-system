@@ -70,6 +70,14 @@ function switchAlert(data) {
             addAlert('El rut ingresado es invalido');
             break;
 
+        case 3:
+            let alert = document.createElement("p");
+            alert.innerText = 'Voto realizado con exito';
+            alertRes.appendChild(alert);
+            alertRes.classList.add('check-alert');
+            alertRes.classList.remove('warning-alert');
+            break;
+
         default:
             alertRes.innerHTML = '';
             alertRes.classList.remove('warning-alert');
