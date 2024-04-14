@@ -17,6 +17,7 @@ if ($_POST) {
     $tv = $_POST['vTV'];
     $redes = $_POST['vRedes'];
     $amigo = $_POST['vAmigo'];
+    $nosotros = "{$web} {$tv} {$redes} {$amigo}";
 
     //Validaciones
     if ($nombre === '' || $alias === '' || $rutN === '' || $mail === '' || $region === '---' || $comuna === '---' || $candidato === '---') {
@@ -30,8 +31,27 @@ if ($_POST) {
     } else if (!validarRut($rutN)) {
         echo json_encode(2);
     } else {
-        echo json_encode('Todo Valido');
+
+        // Limpiar espacios en blanco inicio y final
+        $nombre = trim($nombre);
+        $alias = trim($alias);
+        $rutN = trim($rutN);
+        $mail = trim($mail);
+        $region = trim($region);
+        $comuna = trim($comuna);
+        $candidato = trim($candidato);
+        $nosotros = trim($nosotros);
+
+        // Ingreso de la datos a la BD
+        $sql_add = 'INSERT INTO votos (nombre,alias,rut,mail,region,comuna,candidato,nosotros) VALUES (?,?,?,?,?,?,?,?)';
+        $sentencia_agregar = $pdo->prepare($sql_add);
+        $sentencia_agregar->execute(array($nombre,$alias,$rutN,$mail,$region,$comuna,$candidato,$nosotros));
+
+        echo json_encode(3);
+        
     }
+
+    
 
 
 

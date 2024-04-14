@@ -1,6 +1,6 @@
 <?php
 
-$link = 'mysql:host=localhost;dbname=prueba';
+$link = 'mysql:host=localhost;dbname=sistema_votos';
 $usuario = "root";
 $password = "root";
 
