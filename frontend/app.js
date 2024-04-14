@@ -72,6 +72,10 @@ function switchAlert(data) {
             break;
 
         case 3:
+            addAlert('El rut ingresado ya votó');
+            break;
+
+        case 4:
             let alert = document.createElement("p");
             alert.innerText = 'Voto realizado con exito';
             alertRes.appendChild(alert);
