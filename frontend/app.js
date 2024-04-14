@@ -76,6 +76,7 @@ function switchAlert(data) {
             alertRes.appendChild(alert);
             alertRes.classList.add('check-alert');
             alertRes.classList.remove('warning-alert');
+            reload();
             break;
 
         default:
@@ -92,6 +93,12 @@ function addAlert(message) {
     alertRes.classList.remove('check-alert');
     alertRes.classList.add('warning-alert');
 }
+
+const reload = (() => {
+    setTimeout(() => {
+        location.reload();
+    }, 4000);
+});
 
 
 
