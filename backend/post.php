@@ -32,22 +32,42 @@ if ($_POST) {
         echo json_encode(2);
     } else {
 
-        // Limpiar espacios en blanco inicio y final
-        $nombre = trim($nombre);
-        $alias = trim($alias);
-        $rutN = trim($rutN);
-        $mail = trim($mail);
-        $region = trim($region);
-        $comuna = trim($comuna);
-        $candidato = trim($candidato);
-        $nosotros = trim($nosotros);
+        if (validarRut($rutN)) {
 
-        // Ingreso de la datos a la BD
-        $sql_add = 'INSERT INTO votos (nombre,alias,rut,mail,region,comuna,candidato,nosotros) VALUES (?,?,?,?,?,?,?,?)';
-        $sentencia_agregar = $pdo->prepare($sql_add);
-        $sentencia_agregar->execute(array($nombre,$alias,$rutN,$mail,$region,$comuna,$candidato,$nosotros));
+            $sql_rut = "SELECT rut FROM votos WHERE rut = ${rutN}";
 
-        echo json_encode(3);
+            $gsent = $pdo->prepare($sql_rut);
+            $gsent->execute();
+
+            $data = $gsent->fetchAll();
+
+            if ($data) {
+                echo json_encode(3);
+                die();
+            } else {
+                // Limpiar espacios en blanco inicio y final
+                $nombre = trim($nombre);
+                $alias = trim($alias);
+                $rutN = trim($rutN);
+                $mail = trim($mail);
+                $region = trim($region);
+                $comuna = trim($comuna);
+                $candidato = trim($candidato);
+                $nosotros = trim($nosotros);
+
+                // Ingreso de los datos a la BD
+                $sql_add = 'INSERT INTO votos (nombre,alias,rut,mail,region,comuna,candidato,nosotros) VALUES (?,?,?,?,?,?,?,?)';
+                $sentencia_agregar = $pdo->prepare($sql_add);
+                $sentencia_agregar->execute(array($nombre,$alias,$rutN,$mail,$region,$comuna,$candidato,$nosotros));
+
+                echo json_encode(4);
+            }
+
+        }
+
+        
+
+        
         
     }
 

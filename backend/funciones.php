@@ -1,5 +1,7 @@
 <?php
 
+include_once 'conexion.php';
+
 function validarEmail($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
@@ -44,6 +46,5 @@ function validarRut($rut) {
     }
 }
 
-function limpiarNosotros($match) {
-    return str_replace("," , "" , $match["nrs"]);
-}
+
+    
