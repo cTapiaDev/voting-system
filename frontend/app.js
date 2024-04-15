@@ -112,7 +112,7 @@ function onlyNumbers(e) {
 
 function onlyString(e) {
     const key = window.Event ? e.which : e.keyCode;
-    return (key >= 97 && key <= 122) || (key >= 65 && key <= 90) || key === 209 || key === 241;
+    return (key >= 97 && key <= 122) || (key >= 65 && key <= 90) || key === 209 || key === 241 || key === 160 ;
 }
 
 
