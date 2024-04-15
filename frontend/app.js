@@ -110,9 +110,14 @@ function onlyNumbers(e) {
     return (key >= 48 && key <= 57) || key === 75;
 }
 
-function onlyString(e) {
-    const key = window.Event ? e.which : e.keyCode;
-    return (key >= 97 && key <= 122) || (key >= 65 && key <= 90) || key === 209 || key === 241 || key === 160 ;
+function numbersAstring(e) {
+    return /[a-zA-zñÑá-úÁ-Ú0-9, ]/i.test(e.key);
+}
+
+function onlyString(event) {
+    // const key = window.Event ? e.which : e.keyCode;
+    // return (key >= 97 && key <= 122) || (key >= 65 && key <= 90) || key === 209 || key === 241 || key === 32 ;
+    return /[a-zA-zñÑá-úÁ-Ú, ]/i.test(event.key);
 }
 
 
